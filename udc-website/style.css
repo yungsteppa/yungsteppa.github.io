@@ -1,0 +1,654 @@
+/* Font face for Sonic Extra Bold */
+@font-face {
+  font-family: 'Sonic Extra Bold';
+  src: url('fonts/SonicExtraBold.woff2') format('woff2'),
+       url('fonts/SonicExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noasarck Largo';
+  src: url('fonts/NoasarckLargo.woff2') format('woff2'),
+       url('fonts/NoasarckLargo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Armata';
+  src: url('fonts/Armata-Regular.woff2') format('woff2'),
+       url('fonts/Armata-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Enigma';
+  src: url('fonts/EnigmaB_2.woff2') format('woff2'),
+       url('fonts/EnigmaB_2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kazmann';
+  src: url('fonts/Kazmann\ Sans.woff2') format('woff2'),
+       url('fonts/Kazmann\ Sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MrB';
+  src: url('fonts/MrB.woff2') format('woff2'),
+       url('fonts/MrB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Reset basics */
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: white;
+  font-family: "NoasarckLargo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar styling */
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+.nav-section {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-section li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.nav-section li a:hover {
+  color: red;
+}
+
+.logo {
+  font-family: 'Sonic Extra Bold', sans-serif;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 2px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  color: red;
+}
+
+
+/* RANKING SUBPAGE */
+/* RANKING SUBPAGE */
+/* RANKING SUBPAGE */
+/* RANKING SUBPAGE */
+/* RANKING SUBPAGE */
+
+
+.rankings-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem; 
+}
+
+
+.rankings-header {
+  font-family: 'Noasarck Largo';
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  color: rgb(0, 0, 0);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+}
+
+.weight-class{
+  background-color:white;
+  color:black;
+  padding: 2rem;
+  border-bottom: 1px solid #ffffff;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.ranking-label {
+  color: rgb(208, 34, 34);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;   /* slight space below label */
+  margin-top: 0.5rem;      /* creates same space as below the name */
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.division{
+  font-size: 0.9rem;
+  color:rgb(208, 34, 34);
+  font-weight:bold;
+  letter-spacing:1px;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.champion-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.champion-name{
+  font-size: 2rem;
+  color: black;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.champion-info h2{
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0;
+  letter-spacing:0.5px;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.champion-label{
+  color: #b8b8b8;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.champ-img {
+  width: 190px;
+  object-fit: contain;
+}
+
+.rankings-list {
+  background-color: white;
+  color: black;
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+
+.rankings-list ol {
+  content: counter(rank);  
+  list-style: decimal;
+  margin-left: 1rem;
+  padding: 0;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+  font-size: 0.5rem;
+  color: #b8b8b8;
+  max-width: 500px; 
+}
+
+.rankings-list li {
+  counter-increment: rank;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  font-family: 'Noasarck Largo';
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.rankings-list li::before {
+  content: counter(rank);    
+  color: #b2b2b2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 2rem;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+.fighter-names {
+  text-decoration: none;
+  color: black;           
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  font-size: 1.1rem;
+  font-family: 'Noasarck Largo';
+}
+
+/* ATHLETES PAGE */
+/* ATHLETES PAGE */
+/* ATHLETES PAGE */
+/* ATHLETES PAGE */
+/* ATHLETES PAGE */
+/* ATHLETES PAGE */
+
+
+/* --- Page Layout --- */
+.athletes-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.titleholders-header {
+  font-family: 'Sonic Extra Bold', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* --- Athlete Row Layout --- */
+/* --- General Layout --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: white;
+}
+
+.athletes-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ufc-label {
+  font-family: 'Noasarck Largo';
+  font-size: 0.9rem;
+  color: rgb(208, 34, 34);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.titleholders-header {
+  letter-spacing: 2px;
+  font-family: 'Noasarck Largo';
+  font-size: 3rem;
+  color: black;
+  margin: 0.5rem 0 0;
+}
+
+/* --- Fighter Rows --- */
+/* Remove .top-line and .name-block completely */
+.athlete-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e1e1e1;
+  max-width: 900px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.champF-img {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.champ-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  max-width: 400px;
+}
+/* --- Text Section --- */
+
+.top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.name-block {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.nickname {
+  font-size: 0.85rem;
+  color: #aaa;
+  font-family: 'Noasarck Largo';
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.champ-details h2 {
+  font-size: 1.8rem;
+  font-family: 'Noasarck Largo';
+  letter-spacing: 2px;
+  color: black;
+  margin: 0;
+}
+
+.record-summary {
+  font-size: 0.75rem;
+  color: #626262;
+  font-family: 'Armata';
+   margin: 0.6rem 0 0;
+}
+
+.last-fight {
+  font-size: 0.75rem;
+  color: #222;
+  font-family: 'Enigma';
+  margin: 0.6rem 0 0;
+}
+
+.fighter-link {
+  color: black;
+  text-decoration: none;
+  font-family: 'Noasarck Largo';
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.fighter-link:hover {
+  color: rgb(208, 34, 34); /* same UFC red */
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .athlete-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .champ-img {
+    margin-bottom: 1rem;
+  }
+
+  .top-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .record-summary {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+/* INDIVIDUAL FIGHTER PAGES */
+/* INDIVIDUAL FIGHTER PAGES */
+/* INDIVIDUAL FIGHTER PAGES */
+/* INDIVIDUAL FIGHTER PAGES */
+/* INDIVIDUAL FIGHTER PAGES */
+
+
+
+body.profile-page {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Profile layout */
+.fighter-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.8rem 0 0 17rem;
+}
+
+.fighter-img img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+.fighter-info {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1rem;
+  margin: 0 0 0.2rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #444;
+  border-radius: 4px;
+  font: 0.55rem/1.2 'Enigma', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Headings & subtitles */
+.fighter-name,
+.fighter-nickname,
+.fighter-subtitle,
+.fighter-record {
+  font-family: 'Noasarck Largo', sans-serif;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.fighter-name {
+  font-size: 3rem;
+  letter-spacing: 4.2px;
+  margin: 1.7rem 0;
+}
+
+.fighter-nickname {
+  font-size: 1.5rem;
+  letter-spacing: 1.2px;
+  color: #a2a2a2;
+  margin: 1.7rem 0;
+}
+
+.fighter-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.fighter-record {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.fighter-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  min-width: 100px;
+  text-align: center;
+  font-family: 'Noasarck Largo', sans-serif;
+}
+
+.stat-box h2 {
+  margin: 0;
+  padding-top: 1rem;
+  font: bold 2.5rem/1 'Armata', sans-serif;
+}
+
+.stat-box p {
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 2px solid #d02222;
+  font: 1.35rem/1.2 'Noasarck Largo', sans-serif;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Fight record container */
+.record-container {
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 1rem 2rem 2rem;
+  background-color: #fff;
+}
+
+/* Individual record rows */
+.fight-record .big-title {
+  font: 3.5rem/1 'Noasarck Largo', sans-serif;
+  color: #000;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #dbdbdb;
+  flex-wrap: wrap;
+}
+
+.record-details {
+  flex: 1;
+  margin-left: 2rem;
+  font: 1.8rem/1.2 'Noasarck Largo';
+  letter-spacing: 1.3px;
+  color:black;
+
+}
+
+.record-date {
+  margin-bottom: 0.8rem;
+  font: .9rem/1.2 'Noasarck Largo';
+  color: #666;
+  letter-spacing: 1.2px;
+}
+
+.record-meta {
+  display: flex;
+  gap: 2rem;
+  font-family:"Armata";
+  letter-spacing: 0;
+  font-size: .7rem;
+  color:#a2a2a2;
+}
+
+.win-method {
+  font-weight: bold;
+  color:black;
+  letter-spacing: 1.3px;
+  font-size: 1.1rem;
+  font-family: 'Noasarck Largo';
+}
+
+/* —— 1. Mobile‑first defaults —— */
+/* —— Universal grid for all screen sizes —— */
+.record-row {
+  display: grid;
+  grid-template-columns: 150px 150px 1fr;
+  column-gap: 1rem;
+  align-items: end;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/* images fill their columns exactly */
+.record-fighter {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+.record-fighter2{
+  width: 100%;
+  display: block;          /* eliminate extra descender space */
+  margin: 0;
+}
+
+/* details live in the third column, left‑aligned */
+.record-details {
+  position: absolute;
+  left: 50%;        /* move the left edge to the page center */
+  transform: none;  /* don’t shift it back */
+  margin: 0;        /* kill any mobile indent */
+  text-align: left; /* keep your text left‑aligned */
+}
+
+
+/* tighten title/date spacing */
+.record-details h3 { margin: 0 0 0.25rem; }
+.record-date      { margin: 0 0 0.5rem; }
+
+
+/* —— Desktop resize —— */
+@media (min-width: 800px) {
+  .record-row {
+    grid-template-columns: 180px 180px 1fr;
+    column-gap: 0;
+  }
+}
