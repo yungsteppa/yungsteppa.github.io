@@ -724,3 +724,168 @@ body.profile-page {
     font-size: 0.9rem;
   }
 }
+
+/* AWARDS PAGE */
+/* AWARDS PAGE */
+/* AWARDS PAGE */
+/* AWARDS PAGE */
+/* AWARDS PAGE */
+
+
+/* Center the title */
+.awards-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0 20px;
+}
+
+.award-card {
+  height: 350px; /* consistent height across all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Alignments (optional but here for clarity) */
+.left, .right, .center {
+  text-align: left;
+}
+
+/* Consistent image block height */
+.award-img,
+.rival-images {
+  height: 200px;
+  margin-top: 10px;
+}
+
+/* Rivalry side-by-side images */
+.rival-images {
+  height: 200px;
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+.rival-img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Headings & text */
+.award-category {
+  color: rgb(208, 34, 34);
+  font-weight: bold;
+  font-size: 1.0rem;
+  text-transform: uppercase;
+  margin-bottom: 0.1rem;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+}
+
+.award-winner {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-family: 'Noasarck Largo';
+  text-decoration: none;
+  margin: 0.2rem 0;
+}
+
+
+.event {
+  color: #999;
+  font-size: 17px;
+  margin: 0;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1.5px;
+  font-family: 'Noasarck Largo';
+}
+
+/* Page title */
+.titleA {
+  font-family: 'Noasarck Largo';
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 4.5px;
+  color: black;
+  margin-top: 3.2rem;
+  margin-bottom: 3rem;
+}
+
+/* Link styling inside h2 */
+.rival-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.vs-text {
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin: 0 6px;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+
+.rival-images.overlap-mode {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 200px; /* match .award-img height */
+  margin-top: 10px; /* match .award-img spacing */
+  position: relative;
+}
+
+
+.rival-img {
+  width: 215px;            /* big size! */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0;               /* REMOVE default spacing */
+  padding: 0;
+  border: none;
+}
+
+/* Overlap the first image */
+.rival-img:first-child {
+  margin-right: -50px;
+  z-index: 2;
+}
+
+.vs-text {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0 6px;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .awards-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* space between stacked cards */
+    margin: 0 auto;
+  }
+
+  .award-card {
+    width: 90%; /* or fixed width like 300px if you want */
+    align-items: center;
+    text-align: center;
+  }
+
+  .rival-images.overlap-mode {
+    justify-content: center;
+  }
+}
