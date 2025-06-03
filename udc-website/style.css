@@ -113,6 +113,88 @@ a {
 }
 
 
+/* 🌐 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🔒 Default HTML & Body */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 🛑 Landing Page Scroll Lock */
+.landing-page {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🧭 Navbar (absolute only on landing page) */
+.landing-page .navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* 🖼️ Fullscreen Image Background */
+.fullscreen-image {
+  height: 100%;
+  width: 100vw;
+  background-image: url("images/UDC5.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📝 Text Styling */
+.hero-text {
+  text-align: center;
+  font-family: 'Noasarck Largo', sans-serif;
+  letter-spacing: 4.8px;
+  color: white;
+  text-shadow: 2px 4px 5px black;
+  z-index: 1;
+  transform: translateY(10rem); /* Optional downward shift */
+}
+
+/* ✨ Text Animation */
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  animation: dropFadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.1s;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  animation: dropFadeIn 1s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+@keyframes dropFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 /* RANKING SUBPAGE */
 /* RANKING SUBPAGE */
 /* RANKING SUBPAGE */
@@ -422,6 +504,34 @@ body {
     margin-left: 0;
     margin-top: 0.5rem;
   }
+  
+  @media (max-width: 768px) {
+  .athlete-row {
+    flex-direction: column;
+    align-items: center; /* changed from flex-start */
+    text-align: center;  /* center the text inside */
+  }
+
+  .champF-img {
+    margin-bottom: 1rem;
+  }
+
+  .champ-details {
+    align-items: center;  /* center items inside text block */
+  }
+
+  .top-line {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .record-summary,
+  .last-fight {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
 }
 
 
@@ -446,19 +556,19 @@ body.profile-page {
 /* === PROFILE SECTION === */
 .fighter-profile {
   display: flex;
-  
   align-items: flex-start;
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2.8rem 0 0 17rem;
+  padding: 3.5rem 0 0 10rem;
 }
 
 .fighter-img img {
   width: 100%;
-  max-width: 350px;
+  max-width: 1000px;
   height: auto;
   object-fit: contain;
+  padding-right: 0.1rem;
 }
 
 .fighter-info {
@@ -813,11 +923,11 @@ body.profile-page {
 .titleA {
   font-family: 'Noasarck Largo';
   text-align: center;
-  font-size: 4rem;
+  font-size: 3rem;
   letter-spacing: 4.5px;
   color: black;
-  margin-top: 3.2rem;
-  margin-bottom: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 /* Link styling inside h2 */
@@ -846,7 +956,7 @@ body.profile-page {
 
 
 .rival-img {
-  width: 215px;            /* big size! */
+  width: 220px;            /* big size! */
   height: auto;
   object-fit: contain;
   display: block;
@@ -888,4 +998,5 @@ body.profile-page {
   .rival-images.overlap-mode {
     justify-content: center;
   }
+
 }
