@@ -136,5 +136,29 @@
 </section>
 
   </main>
+
+<!--Javascript-->
+<script>
+  const faders = document.querySelectorAll('.scroll-fade');
+
+  const appearOptions = {
+    threshold: 0.1
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // remove if you want it to animate only once
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+
 </body>
 </html>

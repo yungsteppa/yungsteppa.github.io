@@ -337,6 +337,20 @@ html, body {
   font-family: 'Noasarck Largo';
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(0px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ATHLETES PAGE */
 /* ATHLETES PAGE */
 /* ATHLETES PAGE */
@@ -1000,3 +1014,21 @@ body.profile-page {
   }
 
 }
+
+/* JAVASCRIPT */
+/* JAVASCRIPT */
+/* JAVASCRIPT */
+/* JAVASCRIPT */
+/* JAVASCRIPT */
+
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
