@@ -93,7 +93,7 @@ a {
 }
 
 .nav-section li a:hover {
-  color: red;
+  color: #d20a0a;
 }
 
 .logo {
@@ -109,7 +109,7 @@ a {
 }
 
 .logo:hover {
-  color: red;
+  color: #d20a0a;
 }
 
 
@@ -230,7 +230,7 @@ html, body {
 }
 
 .ranking-label {
-  color: rgb(208, 34, 34);
+  color: #d20a0a;
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -242,7 +242,7 @@ html, body {
 
 .division{
   font-size: 0.9rem;
-  color:rgb(208, 34, 34);
+  color:#d20a0a;
   font-weight:bold;
   letter-spacing:1px;
   margin: 0;
@@ -398,7 +398,7 @@ body {
 .ufc-label {
   font-family: 'Noasarck Largo';
   font-size: 0.9rem;
-  color: rgb(208, 34, 34);
+  color: #d20a0a;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin: 0;
@@ -494,7 +494,7 @@ body {
 }
 
 .fighter-link:hover {
-  color: rgb(208, 34, 34); /* same UFC red */
+  color: #d20a0a; /* same UFC red */
 }
 
 
@@ -562,7 +562,7 @@ body {
 body.profile-page {
   margin: 0;
   padding: 0;
-  background-color: #0d0d0d;
+  background-color: #19191e;
   color: #fff;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -605,7 +605,7 @@ body.profile-page {
   min-height: 1rem;
   margin: 0 0 0.2rem;
   padding: 0.2rem 0.6rem;
-  background-color: #444;
+  background-color: #3b3b3f;
   border-radius: 4px;
   font: 0.55rem/1.2 'Enigma', sans-serif;
   letter-spacing: 0.5px;
@@ -661,15 +661,16 @@ body.profile-page {
 .stat-box h2 {
   margin: 0;
   padding-top: 1rem;
-  font: bold 2.5rem/1 'Armata', sans-serif;
+  font:  2.5rem/1 'Enigma', sans-serif;
+
 }
 
 .stat-box p {
   margin-top: 0.5rem;
   padding-top: 0.4rem;
-  border-top: 2px solid #d02222;
+  border-top: 2px solid #d20a0a;
   font: 1.35rem/1.2 'Noasarck Largo', sans-serif;
-  color: #ccc;
+  color: #cccccc;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -702,6 +703,8 @@ body.profile-page {
   color: #000;
   letter-spacing: 4px;
   margin-bottom: 1rem;
+  font-weight: bold;
+  padding-top: 3rem;
 }
 
 /* === INDIVIDUAL RECORD ROWS === */
@@ -903,7 +906,7 @@ body.profile-page {
 
 /* Headings & text */
 .award-category {
-  color: rgb(208, 34, 34);
+  color: #d20a0a;
   font-weight: bold;
   font-size: 1.0rem;
   text-transform: uppercase;

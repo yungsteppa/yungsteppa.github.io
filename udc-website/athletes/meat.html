@@ -59,7 +59,7 @@
     <!-- Fight Info -->
     <section class="fight-record">
   <h2 class="big-title">PLAYER RECORD</h2>
-  <div class="record-row">
+  <div class="record-row scroll-fade">
    <a href="peyton.html"><img src="../images/peytonSmallWIN.png" alt="Fighter 1" class="record-fighter"></a>
     <a href="meat.html"><img src="../images/meatbossSmall.png" alt="Fighter 1" class="record-fighter"></a>
     <div class="record-details">
@@ -72,7 +72,7 @@
     </div>
   </div>
 
-<div class="record-row">
+<div class="record-row scroll-fade">
    <a href="alyssa.html"><img src="../images/emptyPic.png" alt="Fighter 1" class="record-fighter"></a>
     <a href="meat.html"><img src="../images/meatbossSmall.png" alt="Fighter 1" class="record-fighter"></a>
     <div class="record-details">
@@ -85,7 +85,7 @@
     </div>
   </div>
 
-   <div class="record-row">
+   <div class="record-row scroll-fade">
     <a href="dylan.html"><img src="../images/dylanSmallWIN.png" alt="Fighter 1" class="record-fighter"></a>
     <a href="meat.html"><img src="../images/meatbossSmall.png" alt="Fighter 1" class="record-fighter"></a>
     <div class="record-details">
@@ -99,7 +99,7 @@
   </div>
 
 
-  <div class="record-row">
+  <div class="record-row scroll-fade">
     <a href="meat.html"><img src="../images/meatbossSmallWIN.png" alt="Fighter 1" class="record-fighter"></a>
     <a href="../athletes.html"><img src="../images/emptyPic.png" alt="Fighter 1" class="record-fighter"></a>
     <div class="record-details">
@@ -115,11 +115,24 @@
 
 </section>
 
-
-  <!-- Add more record-rows below as needed -->
-
 </section>
 
+<script>
+  const fadeIns = document.querySelectorAll('.scroll-fade');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // only fade in once
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  fadeIns.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

@@ -27,7 +27,7 @@
       <p class="ufc-label">UDC</p>
       <h1 class="titleholders-header">PLAYERS</h1>
     </section>
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
   <div class="champ-img-wrapper">
   <img src="images/peytonSmall.png" alt="Peyton Heidish" class="champF-img">
    </div>
@@ -40,7 +40,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/dylanSmall.png" alt="Dylan Host" class="champF-img">
   </div>
@@ -53,7 +53,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/alexSmall.png" alt="Alex Marinski" class="champF-img">
   </div>
@@ -67,7 +67,7 @@
 </section>
 
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/emptyPic.png" alt="Alyssa Signorelli" class="champF-img">
   </div>
@@ -81,7 +81,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/meatbossSmall.png" alt="Ethan Salisbury" class="champF-img">
   </div>
@@ -95,7 +95,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/emptyPic.png" alt="Erin Cardin" class="champF-img">
   </div>
@@ -108,7 +108,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/emptyPic.png" alt="Anthony Santi" class="champF-img">
   </div>
@@ -121,7 +121,7 @@
   </div>
 </section>
 
-<section class="athlete-row">
+<section class="athlete-row scroll-fade">
     <div class="champ-img-wrapper">
   <img src="images/emptyPic.png" alt="Jesus Delgado" class="champF-img">
   </div>
@@ -149,7 +149,7 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // remove if you want it to animate only once
+        observer.unobserve(entry.target); // 👈 this makes it one-time only
       }
     });
   }, appearOptions);
