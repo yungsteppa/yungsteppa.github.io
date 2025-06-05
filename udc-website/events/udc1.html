@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="../images/UDC.png">
+  <title>Events | UDC</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="events-page">
+
+  <nav class="navbar">
+    <ul class="nav-section">
+      <li><a href="../athletes.html">ATHLETES</a></li>
+      <li><a href="../rankings.html">RANKINGS</a></li>
+    </ul>
+    <a href="../index.html" class="logo">UDC</a>
+    <ul class="nav-section">
+      <li><a href="../awards.html">AWARDS</a></li>
+      <li><a href="../events.html">EVENTS</a></li>
+    </ul>
+  </nav>
+
+  <!-- Fullscreen top banner -->
+  <div class="banner">
+    <div class="hero-text2 drop-in">
+      <h2>UDC 1</h2>
+      <h1>ALL VS ALL</h1>
+    </div>
+    <img src="../images/promoUDC1.jpg" alt="UDC Banner">
+  </div>
+
+  <h1 class="rankings-header2">EVENT'S RANKING</h1>
+  <div class="ranking-flex-wrapper">
+    <div class="ranking-container">
+    <section class="weight-class2 scroll-fade">
+      <div class="champion-box2">
+        <div class="champ-info2">
+          <p class="ranking-label2">EVENT RANKING</p>
+          <a href="../athletes/peyton.html">
+            <span class="champion-name2">ETHAN SALISBURY</span>
+          </a>
+          <p class="champion-label2">CHAMPION</p>
+        </div>
+        <img src="../images/meatbossSmall.png" alt="Champion" class="champ-img2">
+      </div>
+    </section>
+
+    <section class="rankings-list2">
+      <ol>
+        <li class="scroll-fade" style="animation-delay: 0.5s;">
+          <a href="../athletes/alyssa.html">
+            <span class="fighter-names2">ALYSSA SIGNORELLI</span>
+          </a>
+        </li>
+        <li class="scroll-fade" style="animation-delay: 0.7s;">
+          <a href="../athletes/meat.html">
+            <span class="fighter-names2">DYLAN HOST</span>
+          </a>
+        </li>
+        <li class="scroll-fade" style="animation-delay: 0.9s;">
+          <a href="../athletes/alex.html">
+            <span class="fighter-names2">PEYTON HEIDISH</span>
+          </a>
+        </li>
+        <li class="scroll-fade" style="animation-delay: 1.2s;">
+          <a href="../athletes/dylan.html">
+            <span class="fighter-names2">ALEX MARINSKI</span>
+          </a>
+        </li>
+        <li class="scroll-fade" style="animation-delay: 1.4s;">
+          <a href="../athletes/santi.html">
+            <span class="fighter-names2">ERIN CARDIN</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </div>
+  </div>
+
+  <!-- Javascript for scroll‐fade (unchanged) -->
+<script>
+  const fadeIns = document.querySelectorAll('.scroll-fade');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target); // only fade in once
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  fadeIns.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

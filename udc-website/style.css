@@ -145,7 +145,7 @@ html, body {
 .fullscreen-image {
   height: 100%;
   width: 100vw;
-  background-image: url("images/UDC5.png");
+  background-image: url("images/UDC5.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -676,18 +676,20 @@ body.profile-page {
 }
 
 .profile-img-wrapper {
-  width: 280px;
-  height: 480px;
+  width: 400px;
+  height: calc(100vh - 5rem); /* fills to bottom with some buffer */
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
+
 .profile-img-wrapper img {
   height: 100%;
+  width: auto;
   object-fit: contain;
+  object-position: bottom;
 }
-
 
 
 /* === RECORD SECTION === */
@@ -910,7 +912,6 @@ body.profile-page {
   font-weight: bold;
   font-size: 1.0rem;
   text-transform: uppercase;
-  margin-bottom: 0.1rem;
   margin-top: 0.2rem;
   letter-spacing: 1px;
   font-family: 'Noasarck Largo';
@@ -923,7 +924,8 @@ body.profile-page {
   letter-spacing: 1.5px;
   font-family: 'Noasarck Largo';
   text-decoration: none;
-  margin: 0.2rem 0;
+  margin-top:0;
+  margin-bottom: 0.2rem;
 }
 
 
@@ -1018,6 +1020,420 @@ body.profile-page {
 
 }
 
+/* EVENTS PAGE */
+/* EVENTS PAGE */
+/* EVENTS PAGE */
+/* EVENTS PAGE */
+/* EVENTS PAGE */
+
+/* Fullscreen top banner image */
+.banner {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* Event card styling */
+.event-card {
+  display: flex;
+  align-items: center;
+  padding-top:4rem;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.events-page {
+  margin: 0;
+  padding: 0;
+}
+
+.events-page .banner {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.events-page .banner img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* OPTIONAL: tighten up the text if it's pushing things down */
+.events-page .hero-text {
+  position: absolute;
+  top: 60%; /* increase to move it lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  z-index: 2;
+  color: white;
+}
+
+
+
+.fighter-img {
+  width: 170px;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-family: "Noasarck Largo";
+  letter-spacing: 2.1px;
+  color:black;
+  font-weight: bold;
+}
+
+.event-location  {
+  margin: 4px 0;
+  font-family: "Armata";
+  color:#585b63;
+  font-size: 0.70rem;
+}
+
+.event-date  {
+  margin: 4px 0;
+  font-family: "Enigma";
+  color:black;
+  font-size: 0.75rem;
+}
+
+.udc-logos {
+  width: 60px;
+  height: auto;
+  object-fit: cover;
+}
+
+.events-header {
+  font-family: 'Noasarck Largo', sans-serif;
+  font-size: 3rem;
+  padding-top:4rem;
+  color: black;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.double-fighters {
+  display: flex;
+  gap: 0; /* remove spacing */
+  padding-left:3rem;
+  padding-right:3rem;
+}
+
+.event-info a {
+  text-decoration: none;
+  color:black;
+  color: inherit;
+}
+
+.event-info a:hover {
+  color: #d20a0a;
+}
+
+/* EVENT SUBPAGES */
+/* EVENT SUBPAGES */
+/* EVENT SUBPAGES */
+/* EVENT SUBPAGES */
+
+/* === HERO / BANNER TEXT === */
+/* === HERO / BANNER TEXT === */
+.hero-text2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: rgb(226, 226, 226);
+  font-family: 'Noasarck Largo', sans-serif;
+  letter-spacing: 4.8px;
+  text-shadow: 2px 4px 5px black;
+}
+
+.hero-text2 h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: dropFadeIn 1s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.hero-text2 h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: dropFadeIn 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes dropFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SCROLL FADE‐IN === */
+.fade-in2, .fade-in {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* === RANKINGS HEADER === */
+.rankings-header2 {
+  font-family: 'Noasarck Largo';
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  color: white;
+  background-color: black;
+  padding: 3rem 0 1.5rem 0;
+  margin: 0;
+}
+
+/* === WRAP & CONTAINER FOR CHAMPION + RANKINGS LIST === */
+.ranking-flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center .ranking-container horizontally */
+  background-color: black;
+  padding: 2rem 0;
+}
+
+/* Make this container the exact fixed width for both underlines */
+.ranking-container {
+  width: 800px;    /* ← You can tweak this to any pixel width you like */
+  max-width: 95%;  /* ← Ensures it still shrinks on small screens */
+}
+
+/* === CHAMPION BOX === */
+.champion-box2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; 
+  gap:19rem;
+  padding: 2rem 0;
+  background-color: black;
+
+  /* White underline spans the full 800px of .ranking-container */
+  width: 100%;  /* This makes it exactly as wide as .ranking-container */
+}
+
+.champ-info2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;   /* Left-align the three lines of text */
+  max-width: 60%;
+  margin-left: 1rem;
+}
+
+.ranking-label2 {
+  color: #b20606;
+   letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
+  margin: 0 0 0.5rem 0;
+}
+
+.champion-name2 {
+  font-size: 2rem;
+ letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0.5rem 0;
+  text-decoration: none;
+}
+
+.champion-label2 {
+  color: #2a2a2a;  
+   letter-spacing: 1px;
+  font-family: 'Noasarck Largo';
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.champ-img2 {
+  width: 200px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* === RANKINGS LIST (under champion) === */
+.rankings-list2 {
+  background-color: black;
+  color: white;
+  padding: 1rem 0;      /* vertical space above/below the list */
+  width: 88%;          /* exactly the same 800px width as champion */
+}
+
+.rankings-list2 ol {
+  list-style: none;        /* Remove default bullets */
+  counter-reset: rank;
+  margin: 0;
+       /* gives a little left padding inside the 800px box */
+}
+
+.rankings-list2 li {
+  counter-increment: rank;
+  position: relative;      /* so ::before can position the number */
+  padding: 1.5rem 0;       /* vertical padding above/below each name */
+  border-bottom: 2px solid #282525;  /* ★ Blue underline for each row ★ */
+  font-family: 'Noasarck Largo';
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Numbering “1, 2, 3…” */
+.rankings-list2 li::before {
+  content: counter(rank);
+  color: #454545; 
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 2rem;
+  text-align: right;
+  margin-right: 0.5rem;
+  position: absolute;
+  left: 0;           /* pin the number to the left edge of the container */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Link text of each fighter, left-aligned */
+.fighter-names2 {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  font-size: 1.1rem;
+  font-family: 'Noasarck Largo';
+  margin-left: 2.8rem;   /* pushes the name over so it sits after the “number” */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* === EVENT’S AWARDS SECTION (unchanged) === */
+.titleA {
+  font-family: 'Noasarck Largo';
+  text-align: center;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  color: black;
+  background-color: white;
+  padding: 3rem 0 1.5rem 0;
+  margin: 0;
+}
+
+/* ─── AWARDS ROW ─── */
+/* ─── 1) SPREAD ALL THREE CARDS ACROSS THE WIDTH ─── */
+.awards-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;    /* pushes left & right cards to the edges */
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem 5%;                  /* give 5% padding on left/right so cards don’t touch the absolute edges */
+}
+
+/* ─── 2) MAKE EACH CARD LARGER & ENSURE WHITE BACKGROUND ─── */
+.award-card {
+  background-color: white;           /* full white interior */
+  color: black;                      /* black text */
+  padding: 2rem;                     /* more padding to make it bigger */
+  border: 1px solid #ccc;            /* light gray border for contrast */
+  width: 30%;                        /* each card takes 30% of the row’s width */
+  box-sizing: border-box;            /* so padding stays inside that 30% */
+  text-align: center;
+  overflow: hidden;                  /* no overflow from images */
+}
+
+/* ─── 3) ENLARGE THE SINGLE IMAGES (PERFORMANCE/WALKOUT) ─── */
+.award-img {
+  width: 100%;
+  height: 250px;                     /* fixed height to make all images uniform */
+  object-fit: cover;                 /* crop/scale to fill the box */
+  display: block;
+  margin-top:0.1rem;             /* small gap above the image */
+}
+
+/* ─── 4) FORCE THE “RIVAL” IMAGES TO STACK INSIDE THE SAME 250px HEIGHT ─── */
+.rival-images {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.rival-img {
+  width: 50%;                        /* each takes half the card’s width */
+  height: 250px;                     /* exactly the same height as .award-img */
+  object-fit: cover;                 /* center-crop so they fill their half */
+}
+
+.award-img,
+.rival-img {
+ width: 100%;
+  max-height: 260px;           /* limit their height so they stay “inside” the card */
+  object-fit: contain;         /* show the entire image, no cropping */
+  display: block;
+  margin-top: 0rem; 
+}
+
+
+/* ─── 5) TEXT COLORS INSIDE THE CARD ─── */
+.award-category.red {
+  color: #d20a0a;                    /* keep category heading red */
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.award-winner {
+  font-size: 1.3rem;                 /* slightly bigger winner name */
+  font-weight: bold;
+  color: black;                      /* black text */
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+}
+
+.event {
+  font-size: 1rem;                   /* slightly larger event label */
+  color: #333;
+  margin-bottom: 1rem;
+}
+
 /* JAVASCRIPT */
 /* JAVASCRIPT */
 /* JAVASCRIPT */
@@ -1034,4 +1450,18 @@ body.profile-page {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 1) Start all .fade-in elements fully transparent and (optionally) slightly shifted down: */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 2) When .fade-in also has .visible, fade to opaque and slide up: */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
