@@ -383,12 +383,6 @@ body {
   background-color: white;
 }
 
-.athletes-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
 .page-header {
   text-align: center;
   margin-top: 2rem;
@@ -414,32 +408,64 @@ body {
 
 /* --- Fighter Rows --- */
 /* Remove .top-line and .name-block completely */
-.athlete-row {
+.athlete-row{
+  display:flex;
+  align-items:flex-end;  
+  gap:5rem;
+  justify-content:center;
+  max-width:900px;    
+  min-height:230px;                   
+  margin:0 auto;                
+  padding:2rem 0 0;
+  position:relative;
+  padding-top: 2rem;
+   margin-left: calc(50% - 300px);
+   z-index: 1;
+}
+
+/* 6️⃣  Underline with consistent, soft drop-shadow */
+.athlete-row::after {
+  content: "";
+  position: absolute;
+  left: 300px;
+  width: calc(100vw + 20px); /* 👈 adds extra on both sides */
+  transform: none;
+  bottom: -1px; /* snaps it clean */
+  width: 100vw;
+  height: 1px;
+  background: #e1e1e1;
+  transform: translateX(-50%);
+  filter: none; /* optional for perfect consistency */
+  z-index: -1;
+}
+
+/* ─ Portrait column ─ */
+.champ-img-wrapper {
+  flex: 0 0 220px;
+  flex-shrink: 0;           /* ✅ ensures fixed image column width */
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid #e1e1e1;
-  max-width: 900px;
+  width: 220px;
   justify-content: center;
-  margin: 0 auto;
+  align-items: flex-end;
+}
+.champF-img{
+  width:100%;               /* fill the 220-px wrapper                 */
+  max-height:200px;
+  height:auto;
+  object-fit:contain;
 }
 
-.champF-img {
-  max-height: 200px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
-}
-
+/* ─ Text column ─ */
 .champ-details {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.4rem;
+  gap: .4rem;
   max-width: 400px;
+  margin-bottom: 3rem;
+  min-width: 400px;        /* ✅ forces consistent alignment */
+  text-align: left;        /* ✅ makes sure all lines are aligned cleanly */
 }
+
 /* --- Text Section --- */
 
 .top-line {
@@ -571,7 +597,7 @@ body.profile-page {
 .fighter-profile {
   display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 3rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 3.5rem 0 0 10rem;
@@ -588,6 +614,7 @@ body.profile-page {
 .fighter-info {
   flex: 1;
   max-width: 600px;
+  padding-left: 11rem;
 }
 
 /* === TAGS === */
@@ -619,6 +646,7 @@ body.profile-page {
   font-family: 'Noasarck Largo', sans-serif;
   letter-spacing: 1.5px;
   margin: 0;
+  
 }
 
 .fighter-name {
@@ -1140,11 +1168,10 @@ body.profile-page {
   letter-spacing: 1px;
 }
 
-.double-fighters {
-  display: flex;
-  gap: 0; /* remove spacing */
-  padding-left:3rem;
-  padding-right:3rem;
+.double-fighters{
+  display:flex;
+  align-items:flex-end;   /* bottoms line up */             /* tiny breathing room */
+  padding:0;              /* kill the extra 3 rem spacing */
 }
 
 .event-info a {
