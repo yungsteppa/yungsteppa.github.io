@@ -524,54 +524,37 @@ body {
 }
 
 
+@media (max-width: 900px) {
+  .athlete-row {
+    margin-left: 40px;
+    justify-content: flex-start;
+  }
+}
+
+
 /* --- Responsive --- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .athlete-row {
     flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .champ-img {
-    margin-bottom: 1rem;
-  }
-
-  .top-line {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .record-summary {
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-  
-  @media (max-width: 768px) {
-  .athlete-row {
-    flex-direction: column;
-    align-items: center; /* changed from flex-start */
-    text-align: center;  /* center the text inside */
-  }
-
-  .champF-img {
-    margin-bottom: 1rem;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    margin-left: -20px;
   }
 
   .champ-details {
-    align-items: center;  /* center items inside text block */
+    margin-bottom: 1rem;
+    min-width: auto; /* allow shrinking */
+    max-width: 90vw;
   }
 
-  .top-line {
-    flex-direction: column;
-    align-items: center;
+  .champ-img-wrapper {
+    width: 150px;
   }
 
-  .record-summary,
-  .last-fight {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    text-align: center;
+  .champF-img {
+    max-height: 150px;
   }
-}
 }
 
 
@@ -1059,6 +1042,8 @@ body.profile-page {
 
 }
 
+
+
 /* EVENTS PAGE */
 /* EVENTS PAGE */
 /* EVENTS PAGE */
@@ -1085,6 +1070,7 @@ body.profile-page {
   border-bottom: 1px solid #ccc;
   max-width: 900px;
   margin: 0 auto;
+  padding-left:8rem;
 }
 
 .events-page {
@@ -1153,9 +1139,10 @@ body.profile-page {
 }
 
 .udc-logos {
-  width: 60px;
+  width: 70px;
   height: auto;
   object-fit: cover;
+  padding-left:1rem;
 }
 
 .events-header {
@@ -1182,6 +1169,12 @@ body.profile-page {
 
 .event-info a:hover {
   color: #d20a0a;
+}
+
+@media (max-width: 900px) {
+ .event-card {
+     padding-left:1rem;
+  }
 }
 
 /* EVENT SUBPAGES */
