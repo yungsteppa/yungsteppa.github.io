@@ -60,57 +60,58 @@ a {
   text-decoration: none;
 }
 
-/* Navbar styling */
+
 .navbar {
   background-color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
+  padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  overflow-x: auto;
 }
 
-
-.nav-section {
+.nav-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-left,
+.nav-right {
   display: flex;
   gap: 2rem;
-  margin: 0;
-  padding: 0;
+  letter-spacing: .08rem;
 }
 
-.nav-section li a {
+.nav-full li a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: 'Noasarck Largo', sans-serif;
   transition: color 0.3s;
-  letter-spacing: 1px;
-  font-family: 'Noasarck Largo';
+  white-space: nowrap;
 }
 
-.nav-section li a:hover {
+.nav-full li a:hover {
   color: #d20a0a;
 }
 
-.logo {
+.nav-full .logo a {
   font-family: 'Sonic Extra Bold', sans-serif;
   font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
   letter-spacing: 2px;
-  text-align: center;
-  flex-shrink: 0;
+  font-weight: bold;
+  color: white;
 }
 
-.logo:hover {
+.nav-full .logo a:hover {
   color: #d20a0a;
 }
+
 
 
 /* 🌐 Global Reset */
@@ -124,7 +125,7 @@ a {
 html, body {
   height: 100%;
   overflow-x: hidden;
-}
+  }
 
 /* 🛑 Landing Page Scroll Lock */
 .landing-page {
@@ -133,7 +134,7 @@ html, body {
   position: relative;
 }
 
-/* 🧭 Navbar (absolute only on landing page) */
+
 .landing-page .navbar {
   position: absolute;
   top: 0;
@@ -143,16 +144,60 @@ html, body {
 
 /* 🖼️ Fullscreen Image Background */
 .fullscreen-image {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
-  background-image: url("images/UDC5.jpg");
+  background-image: url("images/UDCHomepage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
+
+.home-dropin {
+  position: absolute;
+  color: white;
+  padding-bottom:14rem;
+  font-family: 'Noasarck Largo', sans-serif;
+  font-size: 4vw;
+  text-shadow: 2px 2px 10px black;
+  letter-spacing: 2px;
+  animation: dropIn 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+@keyframes dropIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔄 Swap to mobile image when screen is 768px or less */
+@media screen and (max-width: 768px) {
+  .fullscreen-image {
+    background-image: url("images/UDCMobile.jpg");
+    height:100vh;
+    background-size: cover;
+  }
+
+  .nav-left,
+.nav-right {
+  gap: 1rem;
+}
+
+.home-dropin{
+   padding-bottom:12rem;
+   font-size:2rem;
+}
+}
+
+
+
 
 /* 📝 Text Styling */
 .hero-text {
@@ -350,6 +395,41 @@ html, body {
   }
 }
 
+/* --- Mobile Styles --- */
+@media screen and (max-width: 768px) {
+  /* Fix champion layout for small screens */
+  .champion-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .champ-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .champ-img {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  .rankings-list {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  .rankings-header {
+    font-size: 2.2rem;
+    letter-spacing: 0.1rem;
+  }
+}
 
 /* ATHLETES PAGE */
 /* ATHLETES PAGE */
@@ -1494,5 +1574,3 @@ body.profile-page {
   opacity: 1;
   transform: translateY(0);
 }
-
-
