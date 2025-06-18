@@ -168,6 +168,7 @@ html, body {
   animation: dropIn 0.8s ease-out forwards;
   opacity: 0;
   transform: translateY(-50px);
+
 }
 
 @keyframes dropIn {
@@ -663,7 +664,7 @@ body.profile-page {
   gap: 3rem;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 3.5rem 0 0 10rem;
+  padding: 3.5rem 0 0 5rem;
 }
 
 .fighter-img img {
@@ -671,13 +672,11 @@ body.profile-page {
   max-width: 1000px;
   height: auto;
   object-fit: contain;
-  padding-right: 0.1rem;
 }
 
 .fighter-info {
   flex: 1;
   max-width: 600px;
-  padding-left: 11rem;
 }
 
 /* === TAGS === */
@@ -795,7 +794,6 @@ body.profile-page {
   font: 3.5rem/1 'Noasarck Largo', sans-serif;
   color: #000;
   letter-spacing: 4px;
-  margin-bottom: 1rem;
   font-weight: bold;
   padding-top: 3rem;
 }
@@ -803,21 +801,44 @@ body.profile-page {
 /* === INDIVIDUAL RECORD ROWS === */
 .record-row {
   display: grid;
-  grid-template-columns: 150px 150px 1fr;
-  padding: 1.5rem 0;
+  grid-template-columns: 260px 260px 1fr;
+  padding: 0;
+  font-size:0;
+  column-gap:0rem;
   border-bottom: 1px solid #dbdbdb;
-  min-height: 130px;
-  flex-wrap: wrap;
-  column-gap: 0rem;
-  align-items:end;
+  align-items: end;
+  min-height: 150px;
+  display:flex;
+  gap:0;
+  align-items:flex-end;   /* bottoms line up */
+  overflow:hidden;  
+  padding-top:3rem;
+  padding-right:1rem; 
+}
+
+.record-row a {
+  display: contents;
 }
 
 .record-fighter,
 .record-fighter2 {
-  width: 100%;
-  display: block;
-  margin: 0;
+ width:175px;
+  height:160px;    
+  object-fit:cover;
+  object-position:center top;   
+  transform:translateY(4px);        /* ✅ pushes image fully onto border */
 }
+
+.double-fighters{
+  display:flex;
+  gap:0;
+  align-items:flex-end;   /* bottoms line up */
+  overflow:hidden;  
+  padding-left:2rem;
+  padding-right:1rem;      /* hide whatever we nudge past the edge */
+}
+
+
 
 .record-details {
   position: relative;
@@ -826,6 +847,8 @@ body.profile-page {
   color: black;
   font: 1.8rem/1.2 'Noasarck Largo';
   letter-spacing: 1.3px;
+  align-self: flex-start;
+  margin-top:1.3rem;
 }
 
 .record-details h3 {
@@ -964,6 +987,9 @@ body.profile-page {
 
 
 /* Center the title */
+/* === AWARDS PAGE STYLES === */
+
+/* === ROW CONTAINER === */
 .awards-row {
   display: flex;
   justify-content: space-between;
@@ -972,47 +998,24 @@ body.profile-page {
   margin: 0 20px;
 }
 
+/* === CARD BASE === */
 .award-card {
-  height: 350px; /* consistent height across all cards */
+  position: relative;
+  height: 350px;
+  padding: 1rem;
+  padding-bottom: 200px;        /* reserve bottom strip for images */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;  /* keep text at top */
+  text-align: center;           /* center all text */
 }
 
-
-/* Alignments (optional but here for clarity) */
-.left, .right, .center {
-  text-align: left;
-}
-
-/* Consistent image block height */
-.award-img,
-.rival-images {
-  height: 200px;
-  margin-top: 10px;
-}
-
-/* Rivalry side-by-side images */
-.rival-images {
-  height: 200px;
-  display: flex;
-  gap: 6px;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-
-.rival-img {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Headings & text */
+/* === TEXT STYLING === */
 .award-category {
   color: #d20a0a;
   font-weight: bold;
-  font-size: 1.0rem;
+  font-size: 1rem;
   text-transform: uppercase;
   margin-top: 0.2rem;
   letter-spacing: 1px;
@@ -1021,86 +1024,85 @@ body.profile-page {
 
 .award-winner {
   font-size: 2rem;
-  color: black;
+  color: #000;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin: 0 0 0.2rem;
   font-family: 'Noasarck Largo';
   text-decoration: none;
-  margin-top:0;
-  margin-bottom: 0.2rem;
 }
-
 
 .event {
   color: #999;
   font-size: 17px;
-  margin: 0;
-  margin-bottom: 0.2rem;
+  margin: 0 0 0.2rem;
   letter-spacing: 1.5px;
   font-family: 'Noasarck Largo';
 }
 
-/* Page title */
 .titleA {
   font-family: 'Noasarck Largo';
   text-align: center;
   font-size: 3rem;
   letter-spacing: 4.5px;
-  color: black;
-  margin-top: 4rem;
-  margin-bottom: 3.5rem;
+  color: #000;
+  margin: 4rem 0 3.5rem;
 }
 
-/* Link styling inside h2 */
-.rival-link {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.vs-text {
-  font-size: 1.7rem;
-  font-weight: normal;
-  margin: 0 6px;
-  vertical-align: middle;
-  letter-spacing: 0.5px;
-}
-
-.rival-images.overlap-mode {
+/* === IMAGE STRIP (bottom 200px) === */
+.award-card .award-img,
+.award-card .rival-images {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 200px; /* match .award-img height */
-  margin-top: 10px; /* match .award-img spacing */
-  position: relative;
+  align-items: flex-end;  /* hug bottom of the strip */
+  overflow: hidden;
+}
+
+/* — Solo images — */
+.award-card .award-img {
+  width: auto;
+  height: 55%;
+  object-fit: cover;
+  object-position: bottom center;
+  margin: 0 auto;
 }
 
 
-.rival-img {
-  width: 220px;            /* big size! */
-  height: auto;
-  object-fit: contain;
-  display: block;
-  position: relative;
-  z-index: 1;
-  margin: 0;               /* REMOVE default spacing */
-  padding: 0;
-  border: none;
+.award-card .rival-img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: bottom center;
 }
 
-/* Overlap the first image */
-.rival-img:first-child {
-  margin-right: -50px;
+/* tweak overlap */
+.award-card .rival-img:first-child {
+  margin-right: -80px;
+  transform: translateX(20px);  /* push it 10px to the right */
   z-index: 2;
+}
+
+/* === VS LINKS === */
+.rival-link {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .vs-text {
   font-size: 1.2rem;
   font-weight: normal;
   margin: 0 6px;
-  vertical-align: middle;
   letter-spacing: 0.5px;
+  vertical-align: middle;
 }
+
+
 
 @media (max-width: 900px) {
   .awards-row {
@@ -1121,7 +1123,6 @@ body.profile-page {
   }
 
 }
-
 
 
 /* EVENTS PAGE */
@@ -1188,11 +1189,12 @@ body.profile-page {
 }
 
 
-
-.fighter-img {
-  width: 170px;
-  height: auto;
-  object-fit: cover;
+.fighter-imgE{
+  width:175px;
+  height:160px;    
+  object-fit:cover;
+  object-position:center top;   
+  transform:translateY(4px);   
 }
 
 .event-info h2 {
@@ -1237,8 +1239,11 @@ body.profile-page {
 
 .double-fighters{
   display:flex;
-  align-items:flex-end;   /* bottoms line up */             /* tiny breathing room */
-  padding:0;              /* kill the extra 3 rem spacing */
+  gap:0;
+  align-items:flex-end;   /* bottoms line up */
+  overflow:hidden;  
+  padding-left:2rem;
+  padding-right:1rem;      /* hide whatever we nudge past the edge */
 }
 
 .event-info a {
