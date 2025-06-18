@@ -615,30 +615,31 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 600px) {
-  .athlete-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    margin-left: -20px;
-  }
-
-  .champ-details {
-    margin-bottom: 1rem;
-    min-width: auto; /* allow shrinking */
-    max-width: 90vw;
-  }
-
-  .champ-img-wrapper {
-    width: 150px;
-  }
-
-  .champF-img {
-    max-height: 150px;
-  }
+   .athlete-row {
+    justify-content: center;
+    scale: 0.75;
+    margin: 0 auto;
+    transform: none;
+    margin-left:8rem;
 }
-
-
+.athlete-row::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 500vw;
+  height: 1px;
+  background: #e1e1e1;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+ .champ-details {
+    margin-left: -40px; /* adjust as needed */
+  }
+  .nickname {
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+}
+}
 
 /* INDIVIDUAL FIGHTER PAGES */
 /* INDIVIDUAL FIGHTER PAGES */
