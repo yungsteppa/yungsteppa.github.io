@@ -670,7 +670,6 @@ body.profile-page {
 
 .fighter-img img {
   width: 100%;
-  max-width: 1000px;
   height: auto;
   object-fit: contain;
 }
@@ -709,7 +708,6 @@ body.profile-page {
   font-family: 'Noasarck Largo', sans-serif;
   letter-spacing: 1.5px;
   margin: 0;
-  
 }
 
 .fighter-name {
@@ -752,8 +750,7 @@ body.profile-page {
 .stat-box h2 {
   margin: 0;
   padding-top: 1rem;
-  font:  2.5rem/1 'Enigma', sans-serif;
-
+  font: 2.5rem/1 'Enigma', sans-serif;
 }
 
 .stat-box p {
@@ -766,14 +763,7 @@ body.profile-page {
   letter-spacing: 1px;
 }
 
-.profile-img-wrapper {
-  width: 400px;
-  height: calc(100vh - 5rem); /* fills to bottom with some buffer */
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-}
+/* === IMAGE WRAPPER === */
 
 .profile-img-wrapper img {
   height: 100%;
@@ -781,7 +771,6 @@ body.profile-page {
   object-fit: contain;
   object-position: bottom;
 }
-
 
 /* === RECORD SECTION === */
 .record-container {
@@ -801,20 +790,13 @@ body.profile-page {
 
 /* === INDIVIDUAL RECORD ROWS === */
 .record-row {
-  display: grid;
-  grid-template-columns: 260px 260px 1fr;
-  padding: 0;
-  font-size:0;
-  column-gap:0rem;
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 3rem 1rem 0 0;
   border-bottom: 1px solid #dbdbdb;
-  align-items: end;
   min-height: 150px;
-  display:flex;
-  gap:0;
-  align-items:flex-end;   /* bottoms line up */
-  overflow:hidden;  
-  padding-top:3rem;
-  padding-right:1rem; 
 }
 
 .record-row a {
@@ -823,23 +805,21 @@ body.profile-page {
 
 .record-fighter,
 .record-fighter2 {
- width:175px;
-  height:160px;    
-  object-fit:cover;
-  object-position:center top;   
-  transform:translateY(4px);        /* ✅ pushes image fully onto border */
+  width: 175px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center top;
+  transform: translateY(4px);
 }
 
-.double-fighters{
-  display:flex;
-  gap:0;
-  align-items:flex-end;   /* bottoms line up */
-  overflow:hidden;  
-  padding-left:2rem;
-  padding-right:1rem;      /* hide whatever we nudge past the edge */
+.double-fighters {
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-left: 2rem;
+  padding-right: 1rem;
 }
-
-
 
 .record-details {
   position: relative;
@@ -849,7 +829,7 @@ body.profile-page {
   font: 1.8rem/1.2 'Noasarck Largo';
   letter-spacing: 1.3px;
   align-self: flex-start;
-  margin-top:1.3rem;
+  margin-top: 1.3rem;
 }
 
 .record-details h3 {
@@ -860,26 +840,26 @@ body.profile-page {
 .event-link {
   color: black;
   text-decoration: none;
-  margin: 0 0 0.25rem;
   font-size: 1.6rem;
-   transition: color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .event-link:hover {
   color: #d20a0a;
 }
+
 .record-date {
-  margin: 0 0 0.5rem;
   font: 0.9rem/1.2 'Noasarck Largo';
   color: #666;
   letter-spacing: 1.2px;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
 .record-meta {
   display: flex;
   gap: 2rem;
-  font-family: "Armata";
+  font-family: 'Armata';
   font-size: 0.7rem;
   color: #a2a2a2;
   flex-wrap: wrap;
@@ -893,92 +873,222 @@ body.profile-page {
   font-family: 'Noasarck Largo';
 }
 
-/* === RESPONSIVE FIXES === */
-@media (max-width: 768px) {
+/* === DESKTOP ONLY === */
+@media (max-width: 600px) {
   .fighter-profile {
-    padding: 1rem;
-    gap: 1rem;
+    display: flex;
+    flex-direction: row;      /* SIDE BY SIDE */
     align-items:center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    margin-top:5rem;
+    flex-wrap: nowrap;
   }
 
-  .fighter-img img {
-    max-width: 250px;
+  /*this looks better on mobile than the cutoff one*/
+ body.mobile-special .profile-img-wrapper img {
+    content: url('../images/emptySideMobile.png');
+  }
+
+  .profile-img-wrapper {
+    width: 120%;
+    max-width: 100px;
+    max-height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 0;
+    margin-bottom: -24px; 
+    padding-left:2rem;
+  }
+
+  .profile-img-wrapper img {
+    width: 240%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom;
   }
 
   .fighter-info {
-    max-width: 100%;
-    font-size: 0.9rem;
+    width: 100%;
+    max-width: 500px;
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+    scale: 1.2;
+    padding-left:3.7rem;
+    padding-bottom:3rem;
   }
-
+  
   .fighter-name {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin: 0.5rem 0 0.3rem;
+    letter-spacing: 1.2px;
+    margin-bottom:1rem;
+    padding-left:.3rem;
   }
 
   .fighter-nickname {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin: 0.2rem 0;
+    color: #aaa;
+    padding-left:.3rem;
   }
 
   .fighter-subtitle,
   .fighter-record {
-    font-size: 0.85rem;
+    font-size: 0.70rem;
+    letter-spacing: .06rem;
+    padding-left:.3rem;
+
   }
 
-  .stat-box h2 {
-    font-size: 2rem;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.4rem 0;
+    margin-bottom: 1rem;
   }
 
-  .stat-box p {
-    font-size: 1rem;
+  .fighter-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0rem;
+    margin-top: 1rem;
+  }
+
+  .stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+}
+
+.tag {
+  font-size: 0.55rem;            /* smaller text */
+  padding: 0.09rem 0.3rem;      /* less space around text */
+  margin: 0 0rem .2rem 0;    /* tighter spacing between tags */
+  border-radius: 2.6px;           /* optional: smaller pill shape */
+}
+
+.stat-box h2 {
+  font: 1.2rem 'Enigma', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.stat-box p {
+  margin-top: 0.3rem;           /* ✅ tighter space between number & line */
+  padding-top: 0.3rem;
+  border-top: 2px solid #d20a0a;
+  width: 40px;                  /* ✅ shorter red line */
+  text-align: center;
+  font: .7rem 'Noasarck Largo', sans-serif;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*record section*/
+
+h2.big-title{
+  font-size: 2rem !important;
+  letter-spacing: .1rem !important;
+  text-align: center !important;
+}
+
+  .record-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  /* force fighter images side-by-side */
+  .record-fighter,
+  .record-fighter2 {
+    width: 45%;
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .record-row a {
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* use a flex container to hold the fighters side-by-side */
+  .record-row a:first-of-type,
+  .record-row a:nth-of-type(2) {
+    margin: 0 0.5rem;
   }
 
   .record-row {
-    grid-template-columns: 160px 160px 1fr;
-    column-gap: 0rem;
-    align-items:end;
-  }
-
-  .record-details h3 {
-    font-size: 1.2rem;
-  }
-
-  .record-meta {
+    display: flex;
     flex-direction: column;
-    gap: 0.2rem;
   }
 
-  .record-date {
-    font-size: 0.75rem;
+  .record-row a {
+    display: flex;
+    justify-content: center;
   }
 
-  .win-method {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-    .fighter-profile {
+  .record-details {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-
-  .fighter-img img {
-    max-width: 120px;
+  .record-details h3 {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
   }
 
-  .fighter-name {
-    font-size: 1.6rem;
+  .event-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
   }
 
-  .stat-box h2 {
-    font-size: 1.6rem;
-  }
-
-  .stat-box p {
+  .record-date {
     font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+
+  .record-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .record-meta p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .win-method {
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
   }
 }
+
+
+
+
 
 /* AWARDS PAGE */
 /* AWARDS PAGE */
