@@ -670,6 +670,7 @@ body.profile-page {
 
 .fighter-img img {
   width: 100%;
+  max-width: 1000px;
   height: auto;
   object-fit: contain;
 }
@@ -708,6 +709,7 @@ body.profile-page {
   font-family: 'Noasarck Largo', sans-serif;
   letter-spacing: 1.5px;
   margin: 0;
+  
 }
 
 .fighter-name {
@@ -750,7 +752,8 @@ body.profile-page {
 .stat-box h2 {
   margin: 0;
   padding-top: 1rem;
-  font: 2.5rem/1 'Enigma', sans-serif;
+  font:  2.5rem/1 'Enigma', sans-serif;
+
 }
 
 .stat-box p {
@@ -763,7 +766,14 @@ body.profile-page {
   letter-spacing: 1px;
 }
 
-/* === IMAGE WRAPPER === */
+.profile-img-wrapper {
+  width: 400px;
+  height: calc(100vh - 5rem); /* fills to bottom with some buffer */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
 
 .profile-img-wrapper img {
   height: 100%;
@@ -771,6 +781,7 @@ body.profile-page {
   object-fit: contain;
   object-position: bottom;
 }
+
 
 /* === RECORD SECTION === */
 .record-container {
@@ -790,13 +801,20 @@ body.profile-page {
 
 /* === INDIVIDUAL RECORD ROWS === */
 .record-row {
-  display: flex;
-  gap: 0;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 3rem 1rem 0 0;
+  display: grid;
+  grid-template-columns: 260px 260px 1fr;
+  padding: 0;
+  font-size:0;
+  column-gap:0rem;
   border-bottom: 1px solid #dbdbdb;
+  align-items: end;
   min-height: 150px;
+  display:flex;
+  gap:0;
+  align-items:flex-end;   /* bottoms line up */
+  overflow:hidden;  
+  padding-top:3rem;
+  padding-right:1rem; 
 }
 
 .record-row a {
@@ -805,21 +823,23 @@ body.profile-page {
 
 .record-fighter,
 .record-fighter2 {
-  width: 175px;
-  height: 160px;
-  object-fit: cover;
-  object-position: center top;
-  transform: translateY(4px);
+ width:175px;
+  height:160px;    
+  object-fit:cover;
+  object-position:center top;   
+  transform:translateY(4px);        /* ✅ pushes image fully onto border */
 }
 
-.double-fighters {
-  display: flex;
-  gap: 0;
-  align-items: flex-end;
-  overflow: hidden;
-  padding-left: 2rem;
-  padding-right: 1rem;
+.double-fighters{
+  display:flex;
+  gap:0;
+  align-items:flex-end;   /* bottoms line up */
+  overflow:hidden;  
+  padding-left:2rem;
+  padding-right:1rem;      /* hide whatever we nudge past the edge */
 }
+
+
 
 .record-details {
   position: relative;
@@ -829,7 +849,7 @@ body.profile-page {
   font: 1.8rem/1.2 'Noasarck Largo';
   letter-spacing: 1.3px;
   align-self: flex-start;
-  margin-top: 1.3rem;
+  margin-top:1.3rem;
 }
 
 .record-details h3 {
@@ -840,26 +860,26 @@ body.profile-page {
 .event-link {
   color: black;
   text-decoration: none;
+  margin: 0 0 0.25rem;
   font-size: 1.6rem;
-  transition: color 0.3s ease;
+   transition: color 0.3s ease;
 }
 
 .event-link:hover {
   color: #d20a0a;
 }
-
 .record-date {
+  margin: 0 0 0.5rem;
   font: 0.9rem/1.2 'Noasarck Largo';
   color: #666;
   letter-spacing: 1.2px;
-  margin-bottom: 0.5rem;
   display: block;
 }
 
 .record-meta {
   display: flex;
   gap: 2rem;
-  font-family: 'Armata';
+  font-family: "Armata";
   font-size: 0.7rem;
   color: #a2a2a2;
   flex-wrap: wrap;
@@ -871,6 +891,68 @@ body.profile-page {
   letter-spacing: 1.3px;
   font-size: 1.1rem;
   font-family: 'Noasarck Largo';
+}
+
+/* === RESPONSIVE FIXES === */
+@media (max-width: 768px) {
+  .fighter-profile {
+    padding: 1rem;
+    gap: 1rem;
+    align-items:center;
+  }
+
+  .fighter-img img {
+    max-width: 250px;
+  }
+
+  .fighter-info {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .fighter-name {
+    font-size: 2rem;
+  }
+
+  .fighter-nickname {
+    font-size: 1rem;
+  }
+
+  .fighter-subtitle,
+  .fighter-record {
+    font-size: 0.85rem;
+  }
+
+  .stat-box h2 {
+    font-size: 2rem;
+  }
+
+  .stat-box p {
+    font-size: 1rem;
+  }
+
+  .record-row {
+    grid-template-columns: 160px 160px 1fr;
+    column-gap: 0rem;
+    align-items:end;
+  }
+
+  .record-details h3 {
+    font-size: 1.2rem;
+  }
+
+  .record-meta {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .record-date {
+    font-size: 0.75rem;
+  }
+
+  .win-method {
+    font-size: 0.9rem;
+  }
 }
 
 /* === DESKTOP ONLY === */
