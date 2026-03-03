@@ -1164,18 +1164,6 @@ body.mobile-special .profile-img-wrapper img{
   margin: 0 20px;
 }
 
-/* === CARD BASE === */
-.award-card {
-  position: relative;
-  height: 350px;
-  padding: 1rem;
-  padding-bottom: 200px;        /* reserve bottom strip for images */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;  /* keep text at top */
-  text-align: center;           /* center all text */
-}
 
 /* === TEXT STYLING === */
 .award-category {
@@ -1268,26 +1256,190 @@ body.mobile-special .profile-img-wrapper img{
   vertical-align: middle;
 }
 
+/* Update these in your style.css to support the new layout */
 
+.champion-name {
+  display: block; /* Ensures the link takes up its own line */
+  font-size: 2rem;
+  color: black;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Fix for the Rivalry VS text inside the new name block */
+.champion-name a {
+  color: black;
+  text-decoration: none;
+}
+
+.champion-name span {
+  font-family: 'Armata', sans-serif; /* Cleaner font for the 'VS' */
+  color: #999;
+}
+
+/* === AWARDS PAGE SPECIFIC (SCOPED) === */
+
+/* 1. Visible Underlines for Awards only */
+.awards-page .weight-class {
+    background-color: white;
+    padding: 2rem 2rem 0 2rem; /* Bottom padding to 0 so image touches line */
+    border-bottom: 1px solid #e1e1e1 !important; /* Visible gray line */
+    margin-bottom: 3rem;
+}
+
+/* 2. Ground the images and text to the bottom */
+.awards-page .champion-box {
+    align-items: flex-end; 
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 3. Make the Winner Name NOT bold */
+.awards-page .champion-name, 
+.awards-page .champion-name a {
+    font-weight: normal !important; 
+    font-size: 2rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+/* 4. Align text column slightly above the line for a cleaner look */
+.awards-page .champ-info {
+    padding-bottom: 15px; 
+}
+
+/* 5. Seal the gap: Force images to touch the line */
+.awards-page .champ-img {
+    margin-bottom: -1px; /* Overlaps the border perfectly */
+    display: flex;
+    align-items: flex-end;
+}
+
+.awards-page .champ-img img {
+    display: block;
+    height: auto;
+}
+
+/* 6. Rivalry specific image sizing */
+.awards-page .rivalry-split img {
+    width: 90px;
+}
+
+/* === AWARDS RIVALRY OVERLAP & POSITIONING === */
+
+/* 1. Ensure the container stays on the right and doesn't squish */
+.awards-page .rivalry-split {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-end; /* 🔥 Forces images to the far right */
+  margin-left: auto;         /* 🔥 Pushes the whole duo container to the right */
+  width: 240px;              /* Fixed width to hold both overlapping images */
+  position: relative;
+}
+
+/* 2. Rival 1 (Left side of the duo) */
+.awards-page .rival-1 {
+  width: 180px !important;    /* Matches the solo champ-img size */
+  height: auto;
+  display: block;
+  margin-bottom: -1px;       /* Touches the line perfectly */
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. Rival 2 (Right side - The Overlap) */
+.awards-page .rival-2 {
+  width: 180px !important;    /* Matches solo champ-img size */
+  height: auto;
+  display: block;
+  margin-bottom: -1px;       /* Touches the line perfectly */
+  margin-left: 20px;       /* 🔥 Pulls it over the first fighter */
+  position: relative;
+  z-index: 0;
+}
+
+.awards-page .vs-text {
+    font-family: 'Noasarck Largo', sans-serif !important; /* 🔥 Matches the names */
+    font-size: 2rem;            /* Matches champion-name size */
+    font-weight: normal;        /* Matches your non-bold request */
+    margin: 0 10px;             /* Space between the names and VS */
+    text-transform: uppercase;  /* Ensures it stays ALL CAPS */
+    color: #999;                /* Optional: keeping it gray so the names pop */
+}
+
+/* Mobile fix for the VS font size */
+@media (max-width: 600px) {
+    .awards-page .vs-text {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* 4. Ensure Winner Name is NOT bold on Awards page */
+.awards-page .champion-name, 
+.awards-page .champion-name a {
+  font-weight: normal !important;
+}
+
+ .awards-page .rivalry-split {
+    width: 130px;
+  }
+  .awards-page .rival-1, 
+  .awards-page .rival-2 {
+    width: 100px;
+    margin-left: -50px;
+  }
+
+
+/* Mobile check: ensure they don't overflow the screen */
+@media (max-width: 600px) {
+  .awards-page .rival-1, 
+  .awards-page .rival-2 {
+    width: 140px !important;
+  }
+  .awards-page .rival-2 {
+    margin-left: -20px;
+    left: 40px;
+  }
+  .awards-page .rival-1 {
+    margin-left: -20px;
+    left: 70px;
+  }
+}
 
 @media (max-width: 900px) {
-  .awards-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 60px; /* space between stacked cards */
-    margin: 0 auto;
+  .awards-page .rival-1, 
+  .awards-page .rival-2 {
+    width: 140px !important;
   }
-
-  .award-card {
-    width: 90%; /* or fixed width like 300px if you want */
-    align-items: center;
-    text-align: center;
+  .awards-page .rival-2 {
+    margin-left: -20px;
+    left: 40px;
   }
-
-  .rival-images.overlap-mode {
-    justify-content: center;
+  .awards-page .rival-1 {
+    margin-left: -20px;
+    left: 70px;
   }
+}
 
+
+/* Keep event links looking like the original labels */
+.awards-page .event-link {
+    color: #b8b8b8; /* Matches your champion-label color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.awards-page .event-link:hover {
+    color: #d20a0a; /* UFC Red hover effect */
+}
+
+/* Ensure image links don't add weird spacing */
+.awards-page a.champ-img {
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
 }
 
 
