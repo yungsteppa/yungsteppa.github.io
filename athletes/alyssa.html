@@ -7,13 +7,26 @@
   <title>Yung Steppa | UDC</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-  .fighter-profile {
+  @media (min-width: 601px) {
+    .profile-img-wrapper {
+      overflow: visible;
+    }
+
+    .profile-img-wrapper img {
+      height: 100%;
+    }
+  }
+
+  /* mobile fix stays separate */
+  @media (max-width: 600px) {
+   .fighter-profile {
     align-items: flex-end;  /* anchors everything to the bottom */
   }
 
   .profile-img-wrapper {
     overflow: visible;
     align-items: flex-end;
+  }
   }
 </style>
 </head>
@@ -39,7 +52,7 @@
   <main class="fighter-profile">
     <div class="fighter-img">
   <div class="profile-img-wrapper">
-    <img src="../images/alyssaTall.webp" alt="Alex">
+    <img src="../images/alyssaTall.webp" alt="alyssa"  loading="eager">
   </div>
 </div>
     <div class="fighter-info">
