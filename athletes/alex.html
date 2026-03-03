@@ -122,25 +122,28 @@
 
 
 <script>
-  const fadeIns = document.querySelectorAll('.scroll-fade');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const fadeIns = document.querySelectorAll('.scroll-fade');
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-  fadeIns.forEach(el => {
-    // Check if already in viewport on load
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      el.classList.add('visible');
-    } else {
-      observer.observe(el);
-    }
+      fadeIns.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          el.classList.add('visible');
+        } else {
+          observer.observe(el);
+        }
+      });
+    }, 500); // wait 300ms for layout to settle
   });
 </script>
 
