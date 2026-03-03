@@ -98,14 +98,20 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target); // only fade in once
+        obs.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1
-  });
+  }, { threshold: 0.1 });
 
-  fadeIns.forEach(el => observer.observe(el));
+  fadeIns.forEach(el => {
+    // Check if already in viewport on load
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 </script>
 </body>
 </html>

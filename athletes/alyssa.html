@@ -6,6 +6,16 @@
   <meta charset="UTF-8">
   <title>Yung Steppa | UDC</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+  .fighter-profile {
+    align-items: flex-end;  /* anchors everything to the bottom */
+  }
+
+  .profile-img-wrapper {
+    overflow: visible;
+    align-items: flex-end;
+  }
+</style>
 </head>
 <body class="profile-page">
 
@@ -29,7 +39,7 @@
   <main class="fighter-profile">
     <div class="fighter-img">
   <div class="profile-img-wrapper">
-    <img src="../images/alyssaTall.png" alt="Alex">
+    <img src="../images/alyssaTall.webp" alt="Alex">
   </div>
 </div>
     <div class="fighter-info">
@@ -42,8 +52,42 @@
   </div>
 
   <!-- Nickname block (remove if no nickname) -->
-  <p class="fighter-nickname">"YUNG STEPPA OG"</p>
+  <p class="fighter-nickname">"YUNG STEPPA <span id="og-trigger">OG</span>"</p>
 
+  <div id="og-easter-egg" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  margin-right: 12rem;
+  width: 10vw; height: 10vh;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+">
+  <img src="../images/rosieSmall.png" style="max-width: 80%; max-height: 80%; object-fit: contain;">
+</div>
+
+<script>
+  let clicks = 0;
+  const trigger = document.getElementById('og-trigger');
+  const egg = document.getElementById('og-easter-egg');
+
+  trigger.style.cursor = 'pointer';
+
+  trigger.addEventListener('click', () => {
+    clicks++;
+    if (clicks >= 3) {
+      egg.style.display = 'flex';
+      clicks = 0;
+    }
+  });
+
+  // Click anywhere to dismiss
+  egg.addEventListener('click', () => {
+    egg.style.display = 'none';
+  });
+</script>
   <h1 class="fighter-name">ALYSSA SIGNORELLI</h1>
 
   <p class="fighter-subtitle">Main Roster</p>
@@ -111,14 +155,20 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target); // only fade in once
+        obs.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1
-  });
+  }, { threshold: 0.1 });
 
-  fadeIns.forEach(el => observer.observe(el));
+  fadeIns.forEach(el => {
+    // Check if already in viewport on load
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 </script>
 
 </body>
