@@ -5,6 +5,7 @@ ORGANIZE PPL PICS, MAKE WIN PICS
 1. update everyone's last appearance
     -update winners record
     -update fight history for everyone
+    -update each persons tags
 2. make new event HTML file
 3. update rankings
 4. update awards
